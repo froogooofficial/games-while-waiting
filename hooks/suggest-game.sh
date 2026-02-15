@@ -12,12 +12,6 @@ RANDOM_GAME="${GAMES[$((RANDOM % ${#GAMES[@]}))]}"
 GAME_NAME="${RANDOM_GAME%%|*}"
 GAME_URL="${RANDOM_GAME##*|}"
 
-# Output JSON with additionalContext — Claude sees this and includes the suggestion
-cat << EOF
-{
-  "hookSpecificOutput": {
-    "hookEventName": "UserPromptSubmit",
-    "additionalContext": "If this task will take multiple steps, briefly suggest the user play a game while waiting. Keep it to one short line at the start of your response like: 🎮 This'll take a sec — try ${GAME_NAME} while I work: ${GAME_URL}\nIf the task is quick (1-2 steps), skip the suggestion entirely."
-  }
-}
-EOF
+# additionalContext is injected into Claude's context discretely
+# Claude will see this and suggest the game in its response
+printf '{"hookSpecificOutput":{"hookEventName":"UserPromptSubmit","additionalContext":"If this task involves multiple steps, suggest a game at the start of your response in one short line: 🎮 This will take a sec — try %s while I work: %s — If the task is quick (1-2 steps), skip the game suggestion entirely."}}\n' "$GAME_NAME" "$GAME_URL"

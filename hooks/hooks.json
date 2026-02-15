@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$PLUGIN_DIR/hooks/suggest-game.sh",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/suggest-game.sh",
             "async": false
           }
         ]

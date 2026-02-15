@@ -1,10 +1,11 @@
 {
   "name": "games-while-waiting",
-  "description": "Suggests a quick browser game when Claude is about to work on a long task",
+  "description": "Suggests browser games while you wait for Claude to finish long tasks",
   "version": "1.0.0",
   "author": {
     "name": "Froogoo"
   },
   "homepage": "https://froogooofficial.github.io/games/",
-  "repository": "https://github.com/froogooofficial/games-while-waiting"
+  "repository": "https://github.com/froogooofficial/games-while-waiting",
+  "keywords": ["games", "productivity", "waiting"]
 }
