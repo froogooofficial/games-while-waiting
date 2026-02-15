@@ -17,29 +17,14 @@ Portal: [froogooofficial.github.io/games](https://froogooofficial.github.io/game
 
 ## Install
 
-### Option 1: Plugin (recommended)
-
-```bash
-# Clone and register as a plugin
-git clone https://github.com/froogooofficial/games-while-waiting.git ~/.claude/plugins/games-while-waiting
-
-# Then in Claude Code:
-/plugins add ~/.claude/plugins/games-while-waiting
-```
-
-### Option 2: Test locally
-
 ```bash
 git clone https://github.com/froogooofficial/games-while-waiting.git
 claude --plugin-dir ./games-while-waiting
 ```
 
-### Option 3: Skill only (no hook)
-
-```bash
-mkdir -p .claude/skills/games-while-waiting
-curl -sL -o .claude/skills/games-while-waiting/SKILL.md \
-  https://raw.githubusercontent.com/froogooofficial/games-while-waiting/main/skills/games-while-waiting/SKILL.md
+Or if you have a marketplace, add the plugin there and install with:
+```
+/plugin install games-while-waiting@your-marketplace
 ```
 
 ## How It Works
